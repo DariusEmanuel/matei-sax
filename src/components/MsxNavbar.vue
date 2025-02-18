@@ -26,25 +26,33 @@
 <script setup>
 import { ref } from "vue";
 
+// const imagesUnderBio = computed(() =>
+//   Array.from(
+//     { length: 10 },
+//     (_, i) =>
+//       new URL(`/src/assets/underBio/image${i + 1}.jpg`, import.meta.url).href
+//   )
+// );
+
 const socialLinks = ref([
   {
     url: "https://www.facebook.com/MateiSaxMusic",
-    icon: "/src/assets/icon-facebook.png",
+    icon: new URL(`/src/assets/icon-facebook.png`, import.meta.url).href,
     alt: "Follow Matei Sax on Facebook",
   },
   {
     url: "https://www.instagram.com/matei.sax/",
-    icon: "/src/assets/icon-instagram.png",
+    icon: new URL("/src/assets/icon-instagram.png", import.meta.url).href,
     alt: "Follow Matei Sax on Instagram",
   },
   {
     url: "https://open.spotify.com/artist/11O4kxlEb8Q2cMBePFXUGC",
-    icon: "/src/assets/icon-spotify.png",
+    icon: new URL("/src/assets/icon-spotify.png", import.meta.url).href,
     alt: "Listen to Matei Sax on Spotify",
   },
   {
     url: "https://www.youtube.com/@mateisax",
-    icon: "/src/assets/icon-youtube.png",
+    icon: new URL("/src/assets/icon-youtube.png", import.meta.url).href,
     alt: "Subscribe to the Matei Sax YouTube channel",
   },
 ]);
