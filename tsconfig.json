@@ -1,14 +1,16 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.vitest.json"
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "paths": {
+      "@/*": ["src/*"]
     }
-  ]
+  },
+  "include": ["src", "vite-env.d.ts"]
 }
