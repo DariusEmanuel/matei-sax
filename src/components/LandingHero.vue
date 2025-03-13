@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, useTemplateRef } from "vue";
 
 const parallaxBackground = useTemplateRef("parallaxBackground");
 
