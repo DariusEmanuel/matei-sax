@@ -1,17 +1,26 @@
 <script setup>
-import { onMounted, onUnmounted, useTemplateRef } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
-const parallaxBackground = useTemplateRef("parallaxBackground");
+const parallaxBackground = ref(null);
+let ticking = false;
 
 const handleScroll = () => {
-  if (parallaxBackground.value) {
-    let scrollY = window.scrollY;
-    parallaxBackground.value.style.transform = `translateY(${scrollY * 0.9}px)`;
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      if (parallaxBackground.value) {
+        let scrollY = window.scrollY;
+        parallaxBackground.value.style.transform = `translateY(${
+          scrollY * 0.5
+        }px)`;
+      }
+      ticking = false;
+    });
+    ticking = true;
   }
 };
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll, { passive: true });
 });
 
 onUnmounted(() => {
@@ -48,6 +57,7 @@ onUnmounted(() => {
     background-position: center;
     background-repeat: no-repeat;
     will-change: transform;
+    transform: translate3d(0, 0, 0); /* GPU acceleration */
     z-index: -1;
   }
 
