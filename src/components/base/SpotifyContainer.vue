@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface SpotifyProps {
   width: string;
-  height: number;
+  height: number | "auto";
   title: string;
   src: string;
 }
