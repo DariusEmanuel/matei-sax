@@ -10,12 +10,12 @@
     <nav class="header__nav">
       <ul class="header__social-links">
         <li
-          v-for="(link, index) in socialLinks"
+          v-for="({ link, url, alt }, index) in imagesStore.socialLinks"
           :key="index"
           class="header__social-item"
         >
-          <a :href="link.url" target="_blank" class="header__social-link">
-            <img :src="link.icon" :alt="link.alt" class="header__social-icon" />
+          <a :href="link" target="_blank" class="header__social-link">
+            <img :src="url" :alt class="header__social-icon" />
           </a>
         </li>
       </ul>
@@ -24,38 +24,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { useImagesStore } from "@/imagesStore";
 
-// const imagesUnderBio = computed(() =>
-//   Array.from(
-//     { length: 10 },
-//     (_, i) =>
-//       new URL(`/src/assets/underBio/image${i + 1}.jpg`, import.meta.url).href
-//   )
-// );
-
-const socialLinks = ref([
-  {
-    url: "https://www.facebook.com/MateiSaxMusic",
-    icon: new URL(`/src/assets/icon-facebook.png`, import.meta.url).href,
-    alt: "Follow Matei Sax on Facebook",
-  },
-  {
-    url: "https://www.instagram.com/matei.sax/",
-    icon: new URL("/src/assets/icon-instagram.png", import.meta.url).href,
-    alt: "Follow Matei Sax on Instagram",
-  },
-  {
-    url: "https://open.spotify.com/artist/11O4kxlEb8Q2cMBePFXUGC",
-    icon: new URL("/src/assets/icon-spotify.png", import.meta.url).href,
-    alt: "Listen to Matei Sax on Spotify",
-  },
-  {
-    url: "https://www.youtube.com/@mateisax",
-    icon: new URL("/src/assets/icon-youtube.png", import.meta.url).href,
-    alt: "Subscribe to the Matei Sax YouTube channel",
-  },
-]);
+const imagesStore = useImagesStore();
 </script>
 
 <style lang="scss" scoped>

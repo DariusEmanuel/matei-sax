@@ -5,22 +5,17 @@ import LandingHero from "../components/LandingHero.vue";
 import BioSection from "../components/sections/BioSection.vue";
 import ListenSection from "../components/sections/ListenSection.vue";
 
-import ImageSwiper from "../components/ImageSwiper.vue";
+import ImageSwiper from "../components/base/ImageSwiper.vue";
+import { useImagesStore } from "@/imagesStore";
 
-const imagesUnderBio = computed(() =>
-  Array.from(
-    { length: 10 },
-    (_, i) =>
-      new URL(`/src/assets/underBio/image${i + 1}.jpg`, import.meta.url).href
-  )
-);
+const imagesStore = useImagesStore();
 </script>
 
 <template>
   <landing-hero />
   <main>
     <bio-section />
-    <image-swiper :images="imagesUnderBio" />
+    <image-swiper :images="imagesStore.imagesUnderBio" />
     <listen-section />
   </main>
 </template>

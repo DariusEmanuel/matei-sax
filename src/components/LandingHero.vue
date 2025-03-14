@@ -26,6 +26,15 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
+
+function onArrowClick(e) {
+  e.preventDefault();
+  window.scrollBy({
+    top: 500,
+    left: 0,
+    behavior: "smooth",
+  });
+}
 </script>
 
 <template>
@@ -35,11 +44,18 @@ onUnmounted(() => {
     <div class="parallax__content">
       <img class="parallax__logo" src="../assets/msx-logo.png" />
       <h1 class="parallax__title">Matei Sax Official</h1>
+
+      <div class="arrow bounce">
+        <a class="fa fa-arrow-down fa-2x" href="#" @click="onArrowClick"></a>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+$bg-color: #2d2d37; // Dark blue
+$primary-color: #fd6b21; // Orange
+
 .parallax {
   position: relative;
   width: 100%;
@@ -81,6 +97,42 @@ onUnmounted(() => {
 
   &__title {
     font-size: 2rem;
+  }
+}
+
+// TODO: FIX THIS CSS: MAKE IT USE BEM
+a {
+  color: white;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.arrow {
+  text-align: center;
+  margin: 120px 0 8%;
+  z-index: 1;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
   }
 }
 </style>

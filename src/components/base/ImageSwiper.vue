@@ -1,10 +1,10 @@
-<script setup>
-const props = defineProps({
-  images: {
-    type: Array,
-    required: true,
-  },
-});
+<script setup lang="ts">
+import type { Image } from "@/imagesStore";
+interface ImageSwiperProps {
+  images: Image[];
+}
+
+const props = defineProps<Required<ImageSwiperProps>>();
 
 const spaceBetween = 10;
 const onProgress = (e) => {
@@ -26,8 +26,8 @@ const onSlideChange = (e) => {};
     @swiperprogress="onProgress"
     @swiperslidechange="onSlideChange"
   >
-    <swiper-slide v-for="(image, index) in images" :key="index">
-      <img :src="image" alt="Slide Image" class="carousel__image" />
+    <swiper-slide v-for="({ url, alt }, index) in images" :key="index">
+      <img :src="url" :alt class="carousel__image" />
     </swiper-slide>
   </swiper-container>
 </template>

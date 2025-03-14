@@ -7,5 +7,3 @@ import MsxNavbar from "./components/MsxNavbar.vue";
   <MsxNavbar />
   <RouterView />
 </template>
-
-<style scoped></style>

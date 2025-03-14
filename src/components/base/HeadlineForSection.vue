@@ -52,7 +52,7 @@ const cssSpanProps = computed(() => ({
 <style lang="scss" scoped>
 @font-face {
   font-family: GalvjiBold;
-  src: url("../assets/fonts/galvji-bold.ttf");
+  src: url("@/assets/fonts/galvji-bold.ttf");
 }
 
 .text-block {

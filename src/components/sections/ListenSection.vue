@@ -1,5 +1,5 @@
 <script setup>
-import HeadlineForSection from "../HeadlineForSection.vue";
+import HeadlineForSection from "@/components/base/HeadlineForSection.vue";
 </script>
 <template>
   <HeadlineForSection
