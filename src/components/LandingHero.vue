@@ -107,6 +107,9 @@ a {
   width: 50px;
   height: 50px;
   display: block;
+  -webkit-tap-highlight-color: transparent !important;
+
+  outline: none !important;
 }
 
 .arrow {
