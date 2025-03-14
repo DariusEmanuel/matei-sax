@@ -113,8 +113,9 @@ a {
 }
 
 .arrow {
+  position: absolute;
+  top: 80%;
   text-align: center;
-  margin: 120px 0 8%;
   z-index: 1;
 }
 .bounce {
