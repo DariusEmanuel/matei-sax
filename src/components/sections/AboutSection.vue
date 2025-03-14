@@ -23,7 +23,7 @@ import HeadlineForSection from "@/components/base/HeadlineForSection.vue";
 
 <style lang="scss">
 .about-section {
-  margin: 0 20px;
+  margin: 40px 20px;
   &__headline {
   }
 

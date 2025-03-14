@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { useImagesStore } from "@/imagesStore";
 
+// landing
 import LandingHero from "@/components/LandingHero.vue";
+
+// sections
 import BioSection from "@/components/sections/BioSection.vue";
 import ListenSection from "@/components/sections/ListenSection.vue";
 import AboutSection from "@/components/sections/AboutSection.vue";
+import LiveShowsSection from "@/components/sections/LiveShowsSection.vue";
 
+// helper components
 import ImageSwiper from "@/components/base/ImageSwiper.vue";
-import { useImagesStore } from "@/imagesStore";
 
 const imagesStore = useImagesStore();
 </script>
@@ -19,6 +23,7 @@ const imagesStore = useImagesStore();
     <image-swiper :images="imagesStore.imagesUnderBio" />
     <listen-section />
     <about-section />
+    <live-shows-section />
   </main>
 </template>
 
