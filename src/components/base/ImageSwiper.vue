@@ -47,7 +47,8 @@ swiper-container::part(bullet) {
 }
 
 swiper-slide {
-  width: 400px;
+  width: 100%;
+  height: 220px;
   text-align: center;
   font-size: 20px;
   display: flex;
@@ -58,6 +59,7 @@ swiper-slide {
 .carousel__image {
   display: block;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  max-height: 280px;
 }
 </style>
