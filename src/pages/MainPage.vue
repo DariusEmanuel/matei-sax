@@ -19,3 +19,9 @@ const imagesStore = useImagesStore();
     <listen-section />
   </main>
 </template>
+
+<style>
+main {
+  margin-bottom: 200px;
+}
+</style>
