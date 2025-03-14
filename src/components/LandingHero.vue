@@ -67,8 +67,8 @@ $primary-color: #fd6b21; // Orange
     top: 0;
     left: 0;
     width: 100%;
-    height: 120vh; /* Slightly larger to account for movement */
-    background-image: url("../assets/hero/hero.jpg");
+    height: 110vh;
+    background-image: url("../assets/hero/ATS_6029.JPG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
