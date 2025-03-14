@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig({
   plugins: [
@@ -10,6 +11,17 @@ export default defineConfig({
         compilerOptions: {
           isCustomElement: (tag) => tag.startsWith("swipe"),
         },
+      },
+    }),
+    ViteImageOptimizer({
+      jpg: {
+        quality: 80,
+      },
+      png: {
+        quality: 60,
+      },
+      svg: {
+        quality: 30,
       },
     }),
   ],
