@@ -39,11 +39,11 @@ swiper-container {
 }
 
 swiper-container::part(bullet-active) {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(148, 148, 148);
 }
 
 swiper-container::part(bullet) {
-  background-color: rgb(56, 54, 54, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 swiper-slide {
