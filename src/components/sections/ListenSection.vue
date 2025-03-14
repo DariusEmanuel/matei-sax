@@ -4,7 +4,7 @@ import SpotifyContainer from "@/components/base/SpotifyContainer.vue";
 import YoutubeContainer from "@/components/base/YoutubeContainer.vue";
 </script>
 <template>
-  <HeadlineForSection
+  <headline-for-section
     title="listen"
     font-size="82px"
     line-height="96px"
@@ -13,7 +13,7 @@ import YoutubeContainer from "@/components/base/YoutubeContainer.vue";
   >
     Find out more about Matei through his live streams, concerts, releases and
     vlogs.
-  </HeadlineForSection>
+  </headline-for-section>
   <SpotifyContainer
     width="80%"
     :height="352"
