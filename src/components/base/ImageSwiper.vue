@@ -7,11 +7,11 @@ interface ImageSwiperProps {
 const props = defineProps<Required<ImageSwiperProps>>();
 
 const spaceBetween = 10;
-const onProgress = (e) => {
+const onProgress = (e: any) => {
   const [swiper, progress] = e.detail;
 };
 
-const onSlideChange = (e) => {};
+const onSlideChange = (e: any) => {};
 </script>
 
 <template>
