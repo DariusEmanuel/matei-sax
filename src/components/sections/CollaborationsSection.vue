@@ -39,10 +39,10 @@ const collabs = computed(() => [
 
 @keyframes slide {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%); // Only scroll half because it's duplicated
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -85,8 +85,9 @@ const collabs = computed(() => [
 
   &__track {
     display: flex;
+    will-change: transform;
     width: max-content; // Ensures content is wide enough to scroll continuously
-    animation: 10s slide infinite linear;
+    animation: 20s slide infinite linear;
   }
 
   &__item {
@@ -96,6 +97,7 @@ const collabs = computed(() => [
       height: 50px;
       border-radius: 50%;
       opacity: 0.8;
+      image-rendering: optimizeQuality;
     }
   }
 }
