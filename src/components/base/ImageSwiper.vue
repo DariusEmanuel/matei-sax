@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Image } from "@/imagesStore";
+import type { Image } from "@/stores/imagesStore";
 interface ImageSwiperProps {
   images: Image[];
 }
