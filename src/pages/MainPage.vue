@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useImagesStore } from "@/imagesStore";
-
 // landing
 import LandingHero from "@/components/LandingHero.vue";
 
@@ -10,27 +8,26 @@ import ListenSection from "@/components/sections/ListenSection.vue";
 import AboutSection from "@/components/sections/AboutSection.vue";
 import LiveShowsSection from "@/components/sections/LiveShowsSection.vue";
 import CollaborationsSection from "@/components/sections/CollaborationsSection.vue";
-
-// helper components
-import ImageSwiper from "@/components/base/ImageSwiper.vue";
-
-const imagesStore = useImagesStore();
+import PlatformsSection from "@/components/sections/PlatformsSection.vue";
+import FooterSection from "@/components/sections/FooterSection.vue";
 </script>
 
 <template>
   <landing-hero />
   <main>
     <bio-section />
-    <image-swiper :images="imagesStore.imagesUnderBio" />
     <listen-section />
     <about-section />
     <live-shows-section />
     <collaborations-section />
+    <platforms-section />
   </main>
+  <footer-section />
 </template>
 
 <style>
 main {
+  /* this is temporar */
   margin-bottom: 200px;
 }
 </style>

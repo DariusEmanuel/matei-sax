@@ -1,8 +1,7 @@
 <script setup>
-import { useImagesStore } from "@/imagesStore";
+import { useImagesStore } from "@/stores/imagesStore";
 
 import HeadlineForSection from "@/components/base/HeadlineForSection.vue";
-
 import ImageSwiper from "@/components/base/ImageSwiper.vue";
 
 const imagesStore = useImagesStore();

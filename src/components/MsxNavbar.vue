@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { useImagesStore } from "@/imagesStore";
+import { useImagesStore } from "@/stores/imagesStore";
 
 const imagesStore = useImagesStore();
 </script>
