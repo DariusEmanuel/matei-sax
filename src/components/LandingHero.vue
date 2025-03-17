@@ -1,7 +1,8 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from "vue";
+import { useTemplateRef } from "vue";
+import { onMounted, onUnmounted } from "vue";
 
-const parallaxBackground = ref(null);
+const parallaxBackground = useTemplateRef("parallaxBackground");
 let ticking = false;
 
 const handleScroll = () => {
@@ -13,6 +14,7 @@ const handleScroll = () => {
           scrollY * 0.5
         }px)`;
       }
+
       ticking = false;
     });
     ticking = true;
@@ -27,13 +29,21 @@ onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
 
+const arrowRef = useTemplateRef("arrowRef");
+
 function onArrowClick(e) {
   e.preventDefault();
   window.scrollBy({
-    top: 500,
+    top: 600,
     left: 0,
     behavior: "smooth",
   });
+  if (arrowRef.value) {
+    arrowRef.value.classList.add("parallax__arrow--fade-out");
+    setTimeout(() => {
+      arrowRef.value.classList.add("parallax__arrow--hidden"); // Fully hide
+    }, 500);
+  }
 }
 </script>
 
@@ -45,7 +55,7 @@ function onArrowClick(e) {
       <img class="parallax__logo" src="../assets/msx-logo.png" />
       <h1 class="parallax__title">Matei Sax Official</h1>
 
-      <div class="arrow bounce">
+      <div ref="arrowRef" class="parallax__arrow arrow parallax__arrow--bounce">
         <a class="fa fa-arrow-down fa-2x" href="#" @click="onArrowClick"></a>
       </div>
     </div>
@@ -112,16 +122,28 @@ a {
   outline: none !important;
 }
 
-.arrow {
+.parallax__arrow {
   position: absolute;
   top: 80%;
   text-align: center;
   z-index: 1;
-}
-.bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out; // Smooth transition
+
+  &--bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+  }
+
+  &--fade-out {
+    opacity: 0; // Fade out
+    transform: translateY(20px); // Slide down slightly
+    pointer-events: none; // Disable interaction
+  }
+
+  &--hidden {
+    visibility: hidden; // Hide completely AFTER transition ends
+  }
 }
 
 @keyframes bounce {
