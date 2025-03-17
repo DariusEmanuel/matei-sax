@@ -49,12 +49,7 @@ const cssSpanProps = computed(() => ({
   </section>
 </template>
 
-<style lang="scss" scoped>
-@font-face {
-  font-family: GalvjiBold;
-  src: url("@/assets/fonts/galvji-bold.ttf");
-}
-
+<style lang="scss">
 .text-block {
   text-align: center;
   padding: 20px 10px;

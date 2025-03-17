@@ -9,6 +9,7 @@ import BioSection from "@/components/sections/BioSection.vue";
 import ListenSection from "@/components/sections/ListenSection.vue";
 import AboutSection from "@/components/sections/AboutSection.vue";
 import LiveShowsSection from "@/components/sections/LiveShowsSection.vue";
+import CollaborationsSection from "@/components/sections/CollaborationsSection.vue";
 
 // helper components
 import ImageSwiper from "@/components/base/ImageSwiper.vue";
@@ -24,6 +25,7 @@ const imagesStore = useImagesStore();
     <listen-section />
     <about-section />
     <live-shows-section />
+    <collaborations-section />
   </main>
 </template>
 
